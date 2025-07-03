@@ -1,14 +1,33 @@
 package com.handongwook.harry_potter.main
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.navigation3.runtime.entry
+import androidx.navigation3.runtime.entryProvider
+import androidx.navigation3.runtime.rememberNavBackStack
+import androidx.navigation3.ui.NavDisplay
+import com.dongwook.core_navigation.Characters
+import com.dongwook.core_navigation.Details
 import com.handongwook.harry_potter.feature.characters.CharactersScreen
+import com.handongwook.harry_potter.feature.details.CharacterDetailsScreen
 
 @Composable
 fun MainRoute(
     innerPadding: PaddingValues
 ) {
-    CharactersScreen(
-        innerPadding = innerPadding,
-    )
+    val backStack = rememberNavBackStack(Characters)
+
+    NavDisplay(
+        modifier = Modifier.padding(innerPadding),
+        backStack = backStack,
+        entryProvider = entryProvider {
+            entry<Characters> {
+                CharactersScreen()
+            }
+            entry<Details> {
+                CharacterDetailsScreen()
+            }
+        })
 }

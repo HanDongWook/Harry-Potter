@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":core-data"))
     implementation(project(":core-model"))
     implementation(project(":core-network"))
+    implementation(project(":core-navigation"))
 
     // feature
     implementation(project(":feature:characters"))
@@ -67,6 +68,10 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.androidx.startup)
+    implementation(libs.androidx.startup)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.navigation3.ui)
+
     implementation(libs.orbit.viewmodel)
     implementation(libs.orbit.compose)
     implementation(libs.orbit.test)

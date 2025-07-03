@@ -24,10 +24,12 @@ koinAndrfoid = "4.1.0"
 ksp = "2.2.0-2.0.2"
 orbitVersion = "10.0.0"
 kotestVersion = "5.9.0"
+navigation3 = "1.0.0-alpha04"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
@@ -42,7 +44,9 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-startup = { module = "androidx.startup:startup-runtime", version.ref = "startUp" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-navigation3-runtime = { group = "androidx.navigation3",  name = "navigation3-runtime", version.ref = "navigation3" }
+androidx-navigation3-ui = { group = "androidx.navigation3",  name = "navigation3-ui", version.ref = "navigation3" }
+
 orbit-viewmodel = { module = "org.orbit-mvi:orbit-viewmodel", version.ref = "orbitVersion" }
 orbit-compose = { module = "org.orbit-mvi:orbit-compose", version.ref = "orbitVersion" }
 orbit-test = { module = "org.orbit-mvi:orbit-test", version.ref = "orbitVersion" }

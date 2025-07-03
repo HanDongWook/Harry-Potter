@@ -29,3 +29,4 @@ include(":core-database")
 
 include(":feature:characters")
 include(":feature:details")
+include(":core-navigation")

@@ -35,15 +35,11 @@ import timber.log.Timber
 
 @Composable
 fun CharactersScreen(
-    innerPadding: PaddingValues,
     viewModel: CharactersViewModel = koinViewModel()
 ) {
     val state by viewModel.collectAsState()
 
-    Column(modifier = Modifier
-        .padding(innerPadding)
-        .fillMaxSize()
-    ) {
+    Column(modifier = Modifier.fillMaxSize()) {
         CharactersAppBar()
         CharactersContent(
             characters = state.characters,

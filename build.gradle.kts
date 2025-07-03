@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-val compileSdkVersion = 35
+val compileSdkVersion = 36
 val minSdkVersion = 26
 val targetSdkVersion = 35
 
