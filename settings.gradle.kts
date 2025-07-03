@@ -26,3 +26,6 @@ include(":core-network")
 include(":core-data")
 include(":core-model")
 include(":core-database")
+
+include(":feature:characters")
+include(":feature:details")
