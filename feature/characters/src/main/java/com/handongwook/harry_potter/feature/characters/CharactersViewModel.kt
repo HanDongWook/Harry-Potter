@@ -1,26 +1,34 @@
 package com.handongwook.harry_potter.feature.characters
 
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.dongwook.core_viewmodel.BaseViewModel
 import com.handongwook.core_data.repository.character.CharacterRepository
+import kotlinx.coroutines.CoroutineExceptionHandler
 import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.viewmodel.container
 
 class CharactersViewModel(
+    coroutineExceptionHandler: CoroutineExceptionHandler,
     private val characterRepository: CharacterRepository
-): ViewModel(), ContainerHost<CharactersUiState, CharactersSideEffect> {
+) : BaseViewModel(coroutineExceptionHandler), ContainerHost<CharactersUiState, CharactersSideEffect> {
 
     override val container: Container<CharactersUiState, CharactersSideEffect> =
         container(initialState = CharactersUiState()) {
-            val characters = characterRepository.getCharacters()
-            reduce {
-                state.copy(
-                    characters = characters
-                )
-            }
+            fetchCharacters()
         }
 
-    fun fetchNextItems() {
+    private suspend fun fetchCharacters() = intent {
+        viewModelScope
+        val characters = characterRepository.getCharacters()
+        reduce {
+            state.copy(
+                characters = characters
+            )
+        }
+    }
+
+    fun fetchNextCharacters() {
 
     }
 

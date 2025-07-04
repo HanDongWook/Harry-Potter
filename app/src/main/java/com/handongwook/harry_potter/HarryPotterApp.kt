@@ -2,10 +2,9 @@ package com.handongwook.harry_potter
 
 import android.app.Application
 import com.handongwook.core_data.di.dataModule
-import com.handongwook.core_network.di.dispatchersModule
-import com.handongwook.core_network.di.networkModule
 import com.handongwook.harry_potter.di.appModule
 import com.handongwook.harry_potter.feature.characters.di.charactersModule
+import com.handongwook.harry_potter.feature.details.di.detailsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -19,14 +18,11 @@ class HarryPotterApp : Application() {
             androidContext(this@HarryPotterApp)
             androidLogger(Level.DEBUG)
 
-            //core
             modules(appModule)
-            modules(dataModule)
-            modules(networkModule)
-            modules(dispatchersModule)
 
             //feature
             modules(charactersModule)
+            modules(detailsModule)
         }
     }
 }

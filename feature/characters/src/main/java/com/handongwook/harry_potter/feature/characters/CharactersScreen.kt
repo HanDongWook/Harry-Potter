@@ -43,7 +43,7 @@ fun CharactersScreen(
         CharactersAppBar()
         CharactersContent(
             characters = state.characters,
-            fetchNextItems = viewModel::fetchNextItems
+            fetchNextItems = viewModel::fetchNextCharacters
         )
     }
 }

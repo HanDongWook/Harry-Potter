@@ -10,7 +10,7 @@ import timber.log.Timber
 class CharacterRepositoryImpl(
     private val characterService: CharacterService,
     private val ioDispatcher: CoroutineDispatcher
-): CharacterRepository {
+) : CharacterRepository {
     override suspend fun getCharacters(): List<Character> = withContext(ioDispatcher) {
         val characters = characterService.getCharacters()
         Timber.e("characters.size:${characters.size}")
