@@ -1,9 +1,9 @@
 package com.handongwook.harry_potter.feature.characters
 
-import androidx.lifecycle.viewModelScope
 import com.dongwook.core_viewmodel.BaseViewModel
 import com.handongwook.core_data.repository.character.CharacterRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.Container
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.viewmodel.container
@@ -19,13 +19,14 @@ class CharactersViewModel(
             fetchCharacters()
         }
 
-    private suspend fun fetchCharacters() = intent {
-        viewModelScope
-        val characters = characterRepository.getCharacters()
-        reduce {
-            state.copy(
-                characters = characters
-            )
+    private fun fetchCharacters() = intent {
+        viewModelErrorHandlingScope.launch {
+            val characters = characterRepository.getCharacters()
+            reduce {
+                state.copy(
+                    characters = characters
+                )
+            }
         }
     }
 

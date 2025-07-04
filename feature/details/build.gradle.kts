@@ -42,6 +42,7 @@ dependencies {
     implementation(project(":core-data"))
     implementation(project(":core-model"))
     implementation(project(":core-viewmodel"))
+    implementation(project(":core-navigation"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
