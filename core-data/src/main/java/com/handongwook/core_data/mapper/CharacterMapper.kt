@@ -1,7 +1,7 @@
 package com.handongwook.core_data.mapper
 
-import com.handongwook.core_network.model.CharacterResponse
 import com.handongwook.core_model.model.Character
+import com.handongwook.core_network.model.CharacterResponse
 
 fun CharacterResponse.toDomain(): Character {
     return Character(

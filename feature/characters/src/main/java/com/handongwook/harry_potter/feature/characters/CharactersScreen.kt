@@ -26,8 +26,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.handongwook.core_model.model.Character
 import coil3.compose.AsyncImage
+import com.handongwook.core_model.model.Character
 import com.handongwook.harry_potter.feature.characters.appbar.CharactersAppBar
 import org.koin.androidx.compose.koinViewModel
 import org.orbitmvi.orbit.compose.collectAsState
@@ -60,7 +60,9 @@ fun CharactersContent(
             columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(6.dp),
         ) {
-            itemsIndexed(items = characters, key = { _, character -> character.name }) { index, character ->
+            itemsIndexed(
+                items = characters,
+                key = { _, character -> character.name }) { index, character ->
 //                if ((index + threadHold) >= characters.size && uiState != HomeUiState.Loading) {
 //                    fetchNextItems()
 //                }

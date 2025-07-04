@@ -8,7 +8,6 @@ import kotlinx.coroutines.plus
 
 open class BaseViewModel(
     coroutineExceptionHandler: CoroutineExceptionHandler
-): ViewModel() {
-    val viewModelErrorHandlingScope: CoroutineScope
-        = viewModelScope + coroutineExceptionHandler
+) : ViewModel() {
+    val viewModelErrorHandlingScope: CoroutineScope = viewModelScope + coroutineExceptionHandler
 }

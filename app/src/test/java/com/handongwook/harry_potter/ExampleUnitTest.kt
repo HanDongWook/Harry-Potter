@@ -1,7 +1,5 @@
 package com.handongwook.harry_potter
 
-import io.kotest.matchers.should
-import io.kotest.matchers.shouldBe
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

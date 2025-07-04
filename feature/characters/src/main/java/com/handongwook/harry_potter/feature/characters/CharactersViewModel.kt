@@ -11,7 +11,8 @@ import org.orbitmvi.orbit.viewmodel.container
 class CharactersViewModel(
     coroutineExceptionHandler: CoroutineExceptionHandler,
     private val characterRepository: CharacterRepository
-) : BaseViewModel(coroutineExceptionHandler), ContainerHost<CharactersUiState, CharactersSideEffect> {
+) : BaseViewModel(coroutineExceptionHandler),
+    ContainerHost<CharactersUiState, CharactersSideEffect> {
 
     override val container: Container<CharactersUiState, CharactersSideEffect> =
         container(initialState = CharactersUiState()) {

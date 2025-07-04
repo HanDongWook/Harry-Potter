@@ -5,5 +5,5 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 
 class DetailsViewModel(
     coroutineExceptionHandler: CoroutineExceptionHandler
-): BaseViewModel(coroutineExceptionHandler) {
+) : BaseViewModel(coroutineExceptionHandler) {
 }

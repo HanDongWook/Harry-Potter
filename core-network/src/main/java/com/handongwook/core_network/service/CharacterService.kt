@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface CharacterService {
     @GET("characters")
-    suspend fun getCharacters() : List<CharacterResponse>
+    suspend fun getCharacters(): List<CharacterResponse>
 }

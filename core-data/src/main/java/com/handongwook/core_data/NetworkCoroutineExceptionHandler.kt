@@ -3,7 +3,7 @@ package com.handongwook.core_data
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlin.coroutines.CoroutineContext
 
-interface NetworkCoroutineExceptionHandler: CoroutineExceptionHandler
+interface NetworkCoroutineExceptionHandler : CoroutineExceptionHandler
 
 class NetworkCoroutineExceptionHandlerImpl : NetworkCoroutineExceptionHandler {
     override val key: CoroutineContext.Key<*> = CoroutineExceptionHandler
