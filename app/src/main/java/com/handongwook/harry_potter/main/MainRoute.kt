@@ -23,7 +23,11 @@ fun MainRoute(
         backStack = backStack,
         entryProvider = entryProvider {
             entry<Characters> {
-                CharactersScreen()
+                CharactersScreen(
+                    onNavigateToDetail = { characterId ->
+                        backStack.add(Details(characterId))
+                    }
+                )
             }
             entry<Details> {
                 CharacterDetailsScreen()

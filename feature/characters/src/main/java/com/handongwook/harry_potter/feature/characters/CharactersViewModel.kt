@@ -34,7 +34,7 @@ class CharactersViewModel(
 
     }
 
-    fun onCharacterClick() {
-
+    fun onCharacterClick(characterId: String) = intent {
+        postSideEffect(CharactersSideEffect.NavigateToDetail(characterId))
     }
 }

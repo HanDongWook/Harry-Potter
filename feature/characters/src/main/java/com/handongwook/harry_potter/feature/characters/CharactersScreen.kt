@@ -17,6 +17,7 @@ import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,19 +32,28 @@ import com.handongwook.harry_potter.core.model.Character
 import com.handongwook.harry_potter.feature.characters.appbar.CharactersAppBar
 import org.koin.androidx.compose.koinViewModel
 import org.orbitmvi.orbit.compose.collectAsState
-import timber.log.Timber
 
 @Composable
 fun CharactersScreen(
-    viewModel: CharactersViewModel = koinViewModel()
+    viewModel: CharactersViewModel = koinViewModel(),
+    onNavigateToDetail: (String) -> Unit = {}
 ) {
     val state by viewModel.collectAsState()
+
+    viewModel.container.sideEffectFlow.collectAsState(initial = null).value?.let { sideEffect ->
+        when (sideEffect) {
+            is CharactersSideEffect.NavigateToDetail -> {
+                onNavigateToDetail(sideEffect.characterId)
+            }
+        }
+    }
 
     Column(modifier = Modifier.fillMaxSize()) {
         CharactersAppBar()
         CharactersContent(
             characters = state.characters,
-            fetchNextItems = viewModel::fetchNextCharacters
+            fetchNextItems = viewModel::fetchNextCharacters,
+            onCharacterClick = viewModel::onCharacterClick
         )
     }
 }
@@ -51,7 +61,8 @@ fun CharactersScreen(
 @Composable
 fun CharactersContent(
     characters: List<Character>,
-    fetchNextItems: () -> Unit
+    fetchNextItems: () -> Unit,
+    onCharacterClick: (String) -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         val threadHold = 8
@@ -68,7 +79,8 @@ fun CharactersContent(
 //                }
 
                 CharactersItem(
-                    character = character
+                    character = character,
+                    onCharacterClick = onCharacterClick
                 )
             }
         }
@@ -78,7 +90,8 @@ fun CharactersContent(
 @Composable
 fun CharactersItem(
     character: Character,
-    backgroundColor: Color = Color.White
+    backgroundColor: Color = Color.White,
+    onCharacterClick: (String) -> Unit = {}
 ) {
     Card(
         modifier = Modifier
@@ -86,7 +99,7 @@ fun CharactersItem(
             .fillMaxWidth()
             .testTag("Character")
             .clickable {
-                Timber.e("")
+                onCharacterClick(character.id)
             },
         shape = RoundedCornerShape(14.dp),
         colors = CardColors(
