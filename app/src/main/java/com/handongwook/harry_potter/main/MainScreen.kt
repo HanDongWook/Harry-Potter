@@ -1,0 +1,25 @@
+package com.handongwook.harry_potter.main
+
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.handongwook.harry_potter.theme.HarrypotterTheme
+
+@Composable
+fun MainScreen() {
+    Scaffold(
+        modifier = Modifier.fillMaxSize()
+    ) { innerPadding ->
+        MainRoute(innerPadding)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun MainScreenPreview() {
+    HarrypotterTheme {
+        MainScreen()
+    }
+}
