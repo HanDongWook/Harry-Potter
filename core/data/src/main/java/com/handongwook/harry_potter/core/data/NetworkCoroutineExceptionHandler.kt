@@ -1,6 +1,7 @@
 package com.handongwook.harry_potter.core.data
 
 import kotlinx.coroutines.CoroutineExceptionHandler
+import timber.log.Timber
 import kotlin.coroutines.CoroutineContext
 
 interface NetworkCoroutineExceptionHandler : CoroutineExceptionHandler
@@ -12,6 +13,6 @@ class NetworkCoroutineExceptionHandlerImpl : NetworkCoroutineExceptionHandler {
         context: CoroutineContext,
         exception: Throwable
     ) {
-        println("NetworkCoroutineExceptionHandler handleException: $exception")
+        Timber.e(exception, "NetworkCoroutineExceptionHandler handleException")
     }
 }
