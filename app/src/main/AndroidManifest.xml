@@ -34,7 +34,7 @@
             tools:node="merge">
 
             <meta-data
-                android:name="com.handongwook.harry_potter.initializer.TimberInitializer"
+                android:name="com.handongwook.harry_potter.initializer.AppInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>
