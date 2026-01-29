@@ -10,16 +10,11 @@ android {
         applicationId = "com.handongwook.harry_potter"
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        debug {
-            isDebuggable = true
-        }
         release {
-            isDebuggable = false
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -42,38 +37,37 @@ dependencies {
     implementation(projects.feature.characters)
     implementation(projects.feature.details)
 
-    implementation(libs.androidx.activity)
+    // compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.text)
-    implementation(libs.androidx.ui.unit)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.compose.animation)
-    implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.compose.foundation.layout)
 
-    implementation(libs.androidx.startup)
+    // navigation
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
 
+    // koin
     implementation(libs.koin.android)
-    implementation(libs.koin.core)
+
+    // coil
+    implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+
+    // others
+    implementation(libs.androidx.startup)
     implementation(libs.timber)
 
-    testImplementation(libs.kotest.runner)
+    // test
     testImplementation(libs.junit)
 
+    // android test
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.test.monitor)
-    androidTestImplementation(libs.junit)
-    androidTestRuntimeOnly(libs.androidx.test.runner)
 
+    // debug
     debugImplementation(libs.androidx.ui.tooling)
     debugRuntimeOnly(libs.androidx.ui.test.manifest)
 }
