@@ -11,6 +11,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             apply(plugin = "com.android.application")
             apply(plugin = "org.jetbrains.kotlin.android")
             apply(plugin = "harrypotter.code.quality")
+            apply(plugin = "com.autonomousapps.dependency-analysis")
 
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)

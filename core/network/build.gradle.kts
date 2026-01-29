@@ -27,22 +27,29 @@ android {
 
 dependencies {
     // coroutines
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.test)
+    api(libs.koin.core)
+    api(libs.kotlinx.serialization.core)
+    api(libs.retrofit)
 
-    // network
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.kotlinx.serialization)
-    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.test)
+    implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
 
-    implementation(libs.timber)
-    implementation(libs.koin.android)
+    runtimeOnly(libs.kotlinx.coroutines.android)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    // network
+    implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.kotlinx.serialization.json)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.monitor)
+    androidTestImplementation(libs.junit)
+    androidTestRuntimeOnly(libs.androidx.loader)
+    androidTestRuntimeOnly(libs.androidx.recyclerview)
+    androidTestRuntimeOnly(libs.androidx.test.runner)
+
+    runtimeOnly(libs.androidx.transition)
 }

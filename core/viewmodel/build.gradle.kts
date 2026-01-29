@@ -21,14 +21,21 @@ android {
 }
 
 dependencies {
-    implementation(libs.timber)
-    implementation(libs.koin.android)
+    api(libs.androidx.lifecycle.viewmodel)
+    api(libs.koin.core)
+    api(libs.kotlinx.coroutines.core)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.material)
+    implementation(libs.koin.core.viewmodel)
+
+    runtimeOnly(libs.androidx.transition)
+    runtimeOnly(libs.kotlinx.coroutines.android)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.monitor)
+    androidTestImplementation(libs.junit)
+    androidTestRuntimeOnly(libs.androidx.loader)
+    androidTestRuntimeOnly(libs.androidx.recyclerview)
+    androidTestRuntimeOnly(libs.androidx.test.runner)
 }

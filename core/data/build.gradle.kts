@@ -21,17 +21,19 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.network)
-    implementation(projects.core.model)
+    api(projects.core.network)
+    api(projects.core.model)
 //    implementation(project(":core-database"))
 
-    implementation(libs.koin.android)
+    api(libs.koin.core)
+    api(libs.kotlinx.coroutines.core)
+
     implementation(libs.timber)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.monitor)
+    androidTestImplementation(libs.junit)
+    androidTestRuntimeOnly(libs.androidx.test.runner)
 }

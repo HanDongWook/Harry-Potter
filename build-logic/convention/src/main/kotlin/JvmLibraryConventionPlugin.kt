@@ -11,6 +11,7 @@ class JvmLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             apply(plugin = "org.jetbrains.kotlin.jvm")
             apply(plugin = "harrypotter.code.quality")
+            apply(plugin = "com.autonomousapps.dependency-analysis")
 
             configureKotlinJvm()
             dependencies {

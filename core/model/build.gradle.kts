@@ -21,11 +21,15 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.monitor)
+    androidTestImplementation(libs.junit)
+    androidTestRuntimeOnly(libs.androidx.loader)
+    androidTestRuntimeOnly(libs.androidx.recyclerview)
+    androidTestRuntimeOnly(libs.androidx.test.runner)
+
+    runtimeOnly(libs.androidx.transition)
+    runtimeOnly(libs.kotlinx.coroutines.android)
 }

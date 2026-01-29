@@ -21,19 +21,19 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.model)
+    api(project(":core:model"))
+    api(libs.koin.core)
 
     implementation(libs.koin.android)
-    implementation(libs.timber)
-
+    implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.compiler)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    runtimeOnly(libs.androidx.room.compiler)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.monitor)
+    androidTestImplementation(libs.junit)
+    androidTestRuntimeOnly(libs.androidx.test.runner)
 }
