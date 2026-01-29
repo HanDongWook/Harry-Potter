@@ -49,13 +49,13 @@ android {
 
 dependencies {
     // core
-    implementation(project(":core-data"))
-    implementation(project(":core-model"))
-    implementation(project(":core-navigation"))
+    implementation(projects.core.data)
+    implementation(projects.core.model)
+    implementation(projects.core.navigation)
 
     // feature
-    implementation(project(":feature:characters"))
-    implementation(project(":feature:details"))
+    implementation(projects.feature.characters)
+    implementation(projects.feature.details)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

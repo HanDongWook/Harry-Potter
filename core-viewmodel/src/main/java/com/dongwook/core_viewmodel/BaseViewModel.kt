@@ -1,4 +1,4 @@
-package com.dongwook.core_viewmodel
+package com.handongwook.harry_potter.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

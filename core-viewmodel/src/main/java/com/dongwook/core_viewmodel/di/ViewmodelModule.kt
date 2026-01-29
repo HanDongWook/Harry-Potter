@@ -1,6 +1,6 @@
-package com.dongwook.core_viewmodel.di
+package com.handongwook.harry_potter.viewmodel.di
 
-import com.dongwook.core_viewmodel.BaseViewModel
+import com.handongwook.harry_potter.viewmodel.BaseViewModel
 import org.koin.core.module.dsl.viewModel
 import org.koin.dsl.module
 

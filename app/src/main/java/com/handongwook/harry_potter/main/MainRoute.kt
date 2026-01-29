@@ -8,8 +8,8 @@ import androidx.navigation3.runtime.entry
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.dongwook.core_navigation.Characters
-import com.dongwook.core_navigation.Details
+import com.handongwook.harry_potter.navigation.Characters
+import com.handongwook.harry_potter.navigation.Details
 import com.handongwook.harry_potter.feature.characters.CharactersScreen
 import com.handongwook.harry_potter.feature.details.CharacterDetailsScreen
 

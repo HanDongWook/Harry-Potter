@@ -21,13 +21,16 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "harry-potter"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":app")
-include(":core-network")
-include(":core-data")
-include(":core-model")
-include(":core-database")
+include(":core:network")
+include(":core:data")
+include(":core:model")
+include(":core:database")
+include(":core:navigation")
 
 include(":feature:characters")
 include(":feature:details")
-include(":core-navigation")
 include(":core-viewmodel")

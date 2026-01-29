@@ -1,7 +1,7 @@
 package com.handongwook.harry_potter.feature.characters
 
-import com.dongwook.core_viewmodel.BaseViewModel
-import com.handongwook.core_data.repository.character.CharacterRepository
+import com.handongwook.harry_potter.viewmodel.BaseViewModel
+import com.handongwook.harry_potter.data.repository.character.CharacterRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import org.orbitmvi.orbit.Container

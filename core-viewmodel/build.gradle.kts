@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.dongwook.core_viewmodel"
-    compileSdk = 36
+    namespace = "com.handongwook.harry_potter.viewmodel"
+    compileSdk = rootProject.extra["compileSdkVersion"] as Int
 
     defaultConfig {
-        minSdk = 24
+        minSdk = rootProject.extra["minSdkVersion"] as Int
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
