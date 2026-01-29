@@ -5,5 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data object Characters : NavKey
+
 @Serializable
 data object Details : NavKey
