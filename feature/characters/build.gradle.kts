@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation(projects.core.data)
     implementation(projects.core.model)
-    implementation(project(":core-viewmodel"))
+    implementation(projects.core.viewmodel)
     implementation(projects.core.navigation)
 
     implementation(libs.androidx.core.ktx)

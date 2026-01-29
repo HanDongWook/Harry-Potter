@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.handongwook.harry_potter.model.Character
+import com.handongwook.harry_potter.core.model.Character
 import com.handongwook.harry_potter.feature.characters.appbar.CharactersAppBar
 import org.koin.androidx.compose.koinViewModel
 import org.orbitmvi.orbit.compose.collectAsState

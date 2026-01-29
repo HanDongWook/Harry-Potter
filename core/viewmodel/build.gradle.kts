@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.handongwook.harry_potter.core.database"
+    namespace = "com.handongwook.harry_potter.core.viewmodel"
     compileSdk = rootProject.extra["compileSdkVersion"] as Int
 
     defaultConfig {
@@ -35,17 +35,12 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.model)
-
-    implementation(libs.koin.android)
     implementation(libs.timber)
-
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    implementation(libs.androidx.room.compiler)
+    implementation(libs.koin.android)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

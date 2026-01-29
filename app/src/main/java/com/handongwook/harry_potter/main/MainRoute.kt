@@ -4,12 +4,11 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation3.runtime.entry
 import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
-import com.handongwook.harry_potter.navigation.Characters
-import com.handongwook.harry_potter.navigation.Details
+import com.handongwook.harry_potter.core.navigation.Characters
+import com.handongwook.harry_potter.core.navigation.Details
 import com.handongwook.harry_potter.feature.characters.CharactersScreen
 import com.handongwook.harry_potter.feature.details.CharacterDetailsScreen
 

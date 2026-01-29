@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.handongwook.harry_potter.navigation"
+    namespace = "com.handongwook.harry_potter.core.navigation"
     compileSdk = rootProject.extra["compileSdkVersion"] as Int
 
     defaultConfig {

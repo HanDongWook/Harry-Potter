@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.handongwook.harry_potter.network"
+    namespace = "com.handongwook.harry_potter.core.network"
     compileSdk = rootProject.extra["compileSdkVersion"] as Int
 
     defaultConfig {

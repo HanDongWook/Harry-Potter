@@ -30,7 +30,7 @@ include(":core:data")
 include(":core:model")
 include(":core:database")
 include(":core:navigation")
+include(":core:viewmodel")
 
 include(":feature:characters")
 include(":feature:details")
-include(":core-viewmodel")

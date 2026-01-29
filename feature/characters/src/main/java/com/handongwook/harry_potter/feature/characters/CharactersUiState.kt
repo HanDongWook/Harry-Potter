@@ -1,7 +1,7 @@
 package com.handongwook.harry_potter.feature.characters
 
 import androidx.compose.runtime.Stable
-import com.handongwook.harry_potter.model.Character
+import com.handongwook.harry_potter.core.model.Character
 
 @Stable
 data class CharactersUiState(
