@@ -11,22 +11,21 @@ import timber.log.Timber
 
 class DetailsViewModel(
     coroutineExceptionHandler: CoroutineExceptionHandler,
-    private val characterRepository: CharacterRepository,
-    private val characterId: String
+    private val characterRepository: CharacterRepository
 ) : BaseViewModel(coroutineExceptionHandler),
     ContainerHost<DetailsUiState, DetailsSideEffect> {
 
     override val container: Container<DetailsUiState, DetailsSideEffect> =
-        container(initialState = DetailsUiState()) {
-            fetchCharacterDetail()
-        }
+        container(initialState = DetailsUiState())
 
-    private fun fetchCharacterDetail() = intent {
+    fun fetchCharacterDetail(characterId: String) = intent {
+        Timber.d("fetchCharacterDetail started for id: $characterId")
         reduce { state.copy(isLoading = true) }
         
         viewModelErrorHandlingScope.launch {
             try {
                 val character = characterRepository.getCharacterById(characterId)
+                Timber.d("Character fetched successfully: ${character.name}")
                 reduce {
                     state.copy(
                         character = character,

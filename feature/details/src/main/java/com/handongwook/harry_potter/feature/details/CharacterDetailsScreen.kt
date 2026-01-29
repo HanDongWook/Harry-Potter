@@ -30,18 +30,23 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.handongwook.harry_potter.core.model.Character
 import org.koin.androidx.compose.koinViewModel
-import org.koin.core.parameter.parametersOf
 import org.orbitmvi.orbit.compose.collectAsState
 import org.orbitmvi.orbit.compose.collectSideEffect
+import timber.log.Timber
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CharacterDetailsScreen(
     characterId: String,
     onNavigateBack: () -> Unit = {},
-    viewModel: DetailsViewModel = koinViewModel { parametersOf(characterId) }
+    viewModel: DetailsViewModel = koinViewModel()
 ) {
     val state by viewModel.collectAsState()
+
+    LaunchedEffect(characterId) {
+        Timber.d("CharacterDetailsScreen: Fetching character with id=$characterId")
+        viewModel.fetchCharacterDetail(characterId)
+    }
 
     viewModel.collectSideEffect { sideEffect ->
         when (sideEffect) {

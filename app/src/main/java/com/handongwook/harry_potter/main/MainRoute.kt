@@ -11,6 +11,7 @@ import com.handongwook.harry_potter.core.navigation.Characters
 import com.handongwook.harry_potter.core.navigation.Details
 import com.handongwook.harry_potter.feature.characters.CharactersScreen
 import com.handongwook.harry_potter.feature.details.CharacterDetailsScreen
+import timber.log.Timber
 
 @Composable
 fun MainRoute(
@@ -29,6 +30,7 @@ fun MainRoute(
                 )
             }
             entry<Details> { (characterId) ->
+                Timber.e("entry<Details> characterId:$characterId")
                 CharacterDetailsScreen(
                     characterId = characterId,
                     onNavigateBack = {

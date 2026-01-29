@@ -11,11 +11,10 @@ val detailsModule = module {
     includes(dataModule)
     includes(viewmodelModule)
 
-    viewModel { (characterId: String) ->
+    viewModel {
         DetailsViewModel(
             coroutineExceptionHandler = get<NetworkCoroutineExceptionHandler>(),
-            characterRepository = get(),
-            characterId = characterId
+            characterRepository = get()
         )
     }
 }

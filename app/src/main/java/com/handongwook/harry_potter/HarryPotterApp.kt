@@ -17,11 +17,11 @@ class HarryPotterApp : Application() {
             androidContext(this@HarryPotterApp)
             androidLogger(Level.DEBUG)
 
-            modules(appModule)
-
-            //feature
-            modules(charactersModule)
-            modules(detailsModule)
+            modules(
+                appModule,
+                charactersModule,
+                detailsModule
+            )
         }
     }
 }
