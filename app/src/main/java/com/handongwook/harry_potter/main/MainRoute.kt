@@ -19,7 +19,6 @@ fun MainRoute(
     val backStack = rememberNavBackStack(Characters)
 
     NavDisplay(
-        modifier = Modifier.padding(innerPadding),
         backStack = backStack,
         entryProvider = entryProvider {
             entry<Characters> {
@@ -29,8 +28,13 @@ fun MainRoute(
                     }
                 )
             }
-            entry<Details> {
-                CharacterDetailsScreen()
+            entry<Details> { (characterId) ->
+                CharacterDetailsScreen(
+                    characterId = characterId,
+                    onNavigateBack = {
+                        backStack.removeLast()
+                    }
+                )
             }
         })
 }
