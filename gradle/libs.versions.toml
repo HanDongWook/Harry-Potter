@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.2"
+agp = "9.0.0"
 kotlin = "2.3.0"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -25,6 +25,8 @@ ksp = "2.3.4"
 orbitVersion = "11.0.0"
 kotestVersion = "6.1.2"
 navigation3 = "1.0.0"
+spotless = "8.2.1"
+detekt = "1.23.8"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -78,13 +80,27 @@ kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.re
 kotest-assertions = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotestVersion" }
 kotest-property = { group = "io.kotest", name = "kotest-property", version.ref = "kotestVersion" }
 
+# Dependencies of the included build-logic
+android-gradleApiPlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+spotless-gradlePlugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 hilt-plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 
+# Plugins defined by harrypotter
+harrypotter-android-application = { id = "harrypotter.android.application" }
+harrypotter-android-library = { id = "harrypotter.android.library" }
+harrypotter-hilt = { id = "harrypotter.hilt" }
+harrypotter-jvm-library = { id = "harrypotter.jvm.library" }
+harrypotter-code-quality = { id = "harrypotter.code.quality" }

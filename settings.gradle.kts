@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -25,6 +26,7 @@ rootProject.name = "harry-potter"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
+
 include(":core:network")
 include(":core:data")
 include(":core:model")
